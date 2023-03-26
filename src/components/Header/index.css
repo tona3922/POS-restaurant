@@ -9,7 +9,7 @@ header {
 .header-common {
   display: flex;
   justify-content: space-between;
-  color: black;
+  /* color: black; */
   margin: 0 auto;
   padding: 12px 15px;
   width: 100%;

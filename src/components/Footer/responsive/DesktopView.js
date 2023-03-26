@@ -1,9 +1,5 @@
 import React from "react";
-import Grid from "@mui/material/Unstable_Grid2";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import IconButton from "@mui/material/IconButton";
-import ListItemText from "@mui/material/ListItemText";
+import { Grid, List, ListItem, IconButton, ListItemText } from "@mui/material";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";

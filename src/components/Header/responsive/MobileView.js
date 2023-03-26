@@ -19,10 +19,8 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import { DrawerContent } from "constants/drawerContent";
-import { useViewport } from "utils/useViewport";
 
 function MobileView() {
-  const width = useViewport();
   const [showNav, setShowNav] = React.useState(false);
 
   const toggleDrawer = (open) => (event) => {
@@ -90,7 +88,6 @@ function MobileView() {
           <IconButton onClick={toggleDrawer(true)}>
             <ViewHeadlineIcon fontSize="large" color="black" />
           </IconButton>
-          {/* <Button>{anchor}</Button> */}
           <Drawer anchor="left" open={showNav} onClose={toggleDrawer(false)}>
             {list()}
           </Drawer>

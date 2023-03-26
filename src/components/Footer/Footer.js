@@ -1,6 +1,5 @@
 import React from "react";
 import "./index.css";
-
 import { Divider } from "@mui/material";
 import { useViewport } from "utils/useViewport.js";
 import MobileView from "./responsive/MobileView";

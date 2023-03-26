@@ -13,10 +13,10 @@ import React from "react";
 
 function MobileView() {
   let current = "";
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState("");
 
   const handleClick = (title) => () => {
-    setOpen(!open);
+    setOpen(title);
   };
 
   return (
@@ -36,7 +36,7 @@ function MobileView() {
                   <ExpandMore sx={{ color: "white" }} />
                 )}
               </ListItemButton>
-              <Collapse in={open} timeout="auto" unmountOnExit>
+              <Collapse in={open == each.title} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
                   {each.list.map((link) => (
                     <ListItemButton sx={{ pl: 4 }}>
@@ -47,7 +47,7 @@ function MobileView() {
               </Collapse>
             </>
           ))}
-          <ListItemButton onClick={handleClick()}>
+          <ListItemButton onClick={handleClick("Download App")}>
             <ListItemText
               primary="Download App"
               className="bottom-section-title"
@@ -58,7 +58,7 @@ function MobileView() {
               <ExpandMore sx={{ color: "white" }} />
             )}
           </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={open == "Download App"} timeout="auto" unmountOnExit>
             <div className="download-photo">
               <img
                 src="https://kfcvn-static.cognizantorderserv.com/images/web/logo_appstore.png"
