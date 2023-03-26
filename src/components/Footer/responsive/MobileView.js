@@ -12,11 +12,12 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import React from "react";
 
 function MobileView() {
-  let current = "";
-  const [open, setOpen] = React.useState("");
+  // let current = "";
+  const [open, setOpen] = React.useState(true);
 
   const handleClick = (title) => () => {
-    setOpen(title);
+    if (open == title) setOpen("");
+    else setOpen(title);
   };
 
   return (
@@ -30,7 +31,7 @@ function MobileView() {
                   primary={each.title}
                   className="bottom-section-title"
                 />
-                {open ? (
+                {open == each.title ? (
                   <ExpandLess sx={{ color: "white" }} />
                 ) : (
                   <ExpandMore sx={{ color: "white" }} />
@@ -52,7 +53,7 @@ function MobileView() {
               primary="Download App"
               className="bottom-section-title"
             />
-            {open ? (
+            {open == "Download App" ? (
               <ExpandLess sx={{ color: "white" }} />
             ) : (
               <ExpandMore sx={{ color: "white" }} />
