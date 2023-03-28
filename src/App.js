@@ -5,6 +5,7 @@ import Menu from './containers/Menu/menu';
 function App() {
   return (
     <div className="App">
+      { /* put routes here*/}
       <Menu />
     </div>
   );
