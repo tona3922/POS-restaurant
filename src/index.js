@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-<<<<<<< HEAD
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-// import sass from 'sass';
-=======
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
->>>>>>> master
+import sass from 'sass';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
