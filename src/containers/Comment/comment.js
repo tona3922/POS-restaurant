@@ -4,7 +4,7 @@ import React, {
 } from 'react';
 import './comment-responsive.css';
 import './comment.css';
-import { 
+import {
     FaUserAlt,
 } from 'react-icons/fa';
 
@@ -21,7 +21,7 @@ import {
     IoMdAlert,
 } from 'react-icons/io';
 
-import { 
+import {
     Rating,
 
 } from '@mui/material';
@@ -103,7 +103,7 @@ function Comment() {
 
     // Hide ("0"), Show ("1"), Notification ("2")
     const [statusForm, setStatusForm] = useState("0");
-    
+
     const handleHideForm = () => {
         setStatusForm("0");
     };
@@ -117,22 +117,22 @@ function Comment() {
     };
 
     return (
-        <div class="comment">
-            <CommentGeneral 
-                _statusForm={statusForm} 
-                _handleShowForm={handleShowForm} 
+        <div className="comment">
+            <CommentGeneral
+                _statusForm={statusForm}
+                _handleShowForm={handleShowForm}
                 _handleHideForm={handleHideForm}
             />
             {/* Truyền hàm thay đổi trạng thái vào hàm CommentGeneral (bắt sự kiện nhấn nút "Tạo") */}
-            
+
             {statusForm === "0" && null}
-            {statusForm === "1" && <CommentForm 
-                                        _statusForm={statusForm} 
-                                        _handleHideForm={handleHideForm} 
-                                        _handleShowNotification={handleShowNotification}
-                                    />}
+            {statusForm === "1" && <CommentForm
+                _statusForm={statusForm}
+                _handleHideForm={handleHideForm}
+                _handleShowNotification={handleShowNotification}
+            />}
             {statusForm === "2" && <CommentNotification />}
-            
+
             {/* Nếu showForm == true thì gọi hàm CommentForm (Mở Form) */}
             {/* Truyền hàm thay đổi trạng thái vào hàm CommentGeneral (bắt sự kiện nhấn nút "Đóng")*/}
 
@@ -142,7 +142,7 @@ function Comment() {
     );
 }
 
-function CommentGeneral({_statusForm, _handleShowForm, _handleHideForm}) {
+function CommentGeneral({ _statusForm, _handleShowForm, _handleHideForm }) {
 
     const handleBtn = () => {
         if (_statusForm == "1") {
@@ -166,7 +166,7 @@ function CommentGeneral({_statusForm, _handleShowForm, _handleHideForm}) {
 
                 <div class="general-item-summary">
                     <div class="general-item-summary-star">
-                        <Rating name="read-only" value={5} readOnly size="large"/>
+                        <Rating name="read-only" value={5} readOnly size="large" />
                     </div>
                     <div class="general-item-summary-average">
                         4.86 / 5
@@ -201,28 +201,28 @@ function CommentGeneral({_statusForm, _handleShowForm, _handleHideForm}) {
 
                 </div>
 
-                {_statusForm === "0" && 
-                <div class="general-send general-send-mobile">
-                    <div class="general-send-btn general-send-btn-mobile" id="comment-btn-open"
-                    onClick={handleBtn} // showForm là hàm xử lý bật / tắt
-                    > Đánh giá ngay! </div>
-                </div>
+                {_statusForm === "0" &&
+                    <div class="general-send general-send-mobile">
+                        <div class="general-send-btn general-send-btn-mobile" id="comment-btn-open"
+                            onClick={handleBtn} // showForm là hàm xử lý bật / tắt
+                        > Đánh giá ngay! </div>
+                    </div>
                 }
-                {_statusForm === "1" && 
-                <div class="general-send general-send-mobile">
-                    <div class="general-send-btn general-send-btn-mobile" id="comment-btn-open"
-                    onClick={handleBtn} // showForm là hàm xử lý bật / tắt
-                    > Đóng </div>
-                </div>
+                {_statusForm === "1" &&
+                    <div class="general-send general-send-mobile">
+                        <div class="general-send-btn general-send-btn-mobile" id="comment-btn-open"
+                            onClick={handleBtn} // showForm là hàm xử lý bật / tắt
+                        > Đóng </div>
+                    </div>
                 }
-                {_statusForm === "2" && 
-                <div class="general-send general-send-mobile">
-                    <div class="general-send-btn general-send-btn-mobile" id="comment-btn-open"
-                    onClick={handleBtn} // showForm là hàm xử lý bật / tắt
-                    > Làm mới trang! </div>
-                </div>
+                {_statusForm === "2" &&
+                    <div class="general-send general-send-mobile">
+                        <div class="general-send-btn general-send-btn-mobile" id="comment-btn-open"
+                            onClick={handleBtn} // showForm là hàm xử lý bật / tắt
+                        > Làm mới trang! </div>
+                    </div>
                 }
-                
+
             </div>
 
         </div>
@@ -253,7 +253,7 @@ function CommentNotification() {
         <div class="comment-notification">
             <div class="comment-notification-container">
                 <div class="notification-image">
-                    <BsCheckCircleFill style={{color: "#133B3D", fontSize: "50px"}}/>
+                    <BsCheckCircleFill style={{ color: "#133B3D", fontSize: "50px" }} />
                 </div>
 
                 <div class="notification-header">
@@ -269,9 +269,9 @@ function CommentNotification() {
 
 }
 
-function CommentForm({_statusForm, _handleHideForm, _handleShowNotification}) {
+function CommentForm({ _statusForm, _handleHideForm, _handleShowNotification }) {
 
-    
+
     const [inputs, setInputs] = useState({});
 
     const [commentRate, setCommentRate] = useState(5);
@@ -305,40 +305,48 @@ function CommentForm({_statusForm, _handleHideForm, _handleShowNotification}) {
         }
         // [name]: value -> cập nhật giá trị "value" của thuộc tính "name" trong inputs
         setInputs((prev) => {
-            return ({...prev, 
-                    [name]: value}
-                );
+            return ({
+                ...prev,
+                [name]: value
+            }
+            );
         });
     }
-    
+
     const handleInputSubmit = (event) => {
         // Thêm "comment_rate": "5" vào inputs để gửi đi
         if (typeof inputs.comment_rate === 'undefined') {
             setInputs((prev) => {
-                return ({...prev, 
-                        ["comment_rate"]: "5"}
-                    );
+                return ({
+                    ...prev,
+                    ["comment_rate"]: "5"
+                }
+                );
             });
         }
         // Thêm "comment_name": "Ẩn danh" vào inputs để gửi đi
         if (typeof inputs.comment_name === 'undefined') {
             setInputs((prev) => {
-                return ({...prev, 
-                        ["comment_name"]: "Ẩn danh"}
-                    );
+                return ({
+                    ...prev,
+                    ["comment_name"]: "Ẩn danh"
+                }
+                );
             });
         }
 
         var today = new Date();
         // Thêm "comment_date", "comment_time" vào inputs để gửi đi
         setInputs((prev) => {
-            return ({...prev, 
+            return ({
+                ...prev,
                 ["comment_date"]: today.getDate(),
                 ["comment_month"]: today.getMonth(),
                 ["comment_year"]: today.getFullYear(),
                 ["comment_hour"]: today.getHours(),
                 ["comment_minute"]: today.getMinutes(),
-                ["comment_second"]: today.getSeconds()}
+                ["comment_second"]: today.getSeconds()
+            }
             );
         })
 
@@ -367,7 +375,7 @@ function CommentForm({_statusForm, _handleHideForm, _handleShowNotification}) {
 
     const isEmail = (email) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
 
-    const handleCheckEmail = () => { 
+    const handleCheckEmail = () => {
         if (!isEmail(commentEmail)) {
             setCheckEmail(true);
         }
@@ -393,83 +401,83 @@ function CommentForm({_statusForm, _handleHideForm, _handleShowNotification}) {
                         }}
                     />
                 </div>
-                
-                <div class='comment-form-field'>   
+
+                <div class='comment-form-field'>
                     <label for="comment-title" class='comment-form-label'> Tiêu đề </label>
                     <input type="text" class="comment-form-input" id="comment-title" placeholder='Tiêu đề đánh giá của bạn'
-                    name="comment_title" onChange={(event) => {
-                        handleInputChange(event);
-                    }}
+                        name="comment_title" onChange={(event) => {
+                            handleInputChange(event);
+                        }}
                     ></input>
                 </div>
 
-                
+
                 <div class='comment-form-field'>
                     <label for="comment-content" class='comment-form-label'> Nội dung đánh giá </label>
-                    <textarea class="comment-form-input" id="comment-content" placeholder='Viết bình luận của bạn tại đây' style={{fontFamily: "inherit"}} required rows={8}
-                    name="comment_content" onChange={(event) => {
-                        handleInputChange(event);
-                    }}
+                    <textarea class="comment-form-input" id="comment-content" placeholder='Viết bình luận của bạn tại đây' style={{ fontFamily: "inherit" }} required rows={8}
+                        name="comment_content" onChange={(event) => {
+                            handleInputChange(event);
+                        }}
                     ></textarea>
                 </div>
 
-                {(commentContent === "" || (commentContent == null && checkFill == true)) && 
+                {(commentContent === "" || (commentContent == null && checkFill == true)) &&
                     <div class="comment-checkfill"> <IoMdAlert className="comment-checkfill-icon" />  Trường này là bắt buộc! </div>
                 }
 
                 <div class='comment-form-field'>
                     <label for="comment-name" class='comment-form-label'> Tên (Công khai) </label>
                     <input type="text" class="comment-form-input" id="comment-name" placeholder='Nhập tên (hiển thị công khai)'
-                    name="comment_name" onChange={handleInputChange}
+                        name="comment_name" onChange={handleInputChange}
                     ></input>
                 </div>
 
-                {(commentName === "" || (commentName == null && checkFill == true)) && 
+                {(commentName === "" || (commentName == null && checkFill == true)) &&
                     <div class="comment-checkfill"> <IoMdAlert className="comment-checkfill-icon" />  Trường này là bắt buộc! </div>
                 }
 
                 <div class='comment-form-field'>
                     <label for="comment-email" class='comment-form-label'> Email </label>
                     <input type="email" class="comment-form-input" id="comment-email" placeholder='Nhập email (không hiển thị công khai)'
-                    name="comment_email" onChange={(event) => {
+                        name="comment_email" onChange={(event) => {
                             handleInputChange(event);
                             handleCheckEmail();
                         }
-                    }
+                        }
                     ></input>
                 </div>
 
-                {(commentEmail === "" || (commentEmail == null && checkFill == true)) && 
+                {(commentEmail === "" || (commentEmail == null && checkFill == true)) &&
                     <div class="comment-checkfill"> <IoMdAlert className="comment-checkfill-icon" />  Trường này là bắt buộc! </div>
                 }
-                {(commentEmail != null && commentEmail != "" && checkEmail == true) && 
+                {(commentEmail != null && commentEmail != "" && checkEmail == true) &&
                     <div class="comment-checkfill"> <IoMdAlert className="comment-checkfill-icon" />  Email không hợp lệ. Vui lòng nhập theo định dạng example@xyz.com </div>
                 }
 
                 <div class='comment-form-btns'>
                     <div class="comment-form-btn" id="comment-btn-submit"
-                    onClick={(event) => {
-                        handleUnFill();
-                        handleCheckEmail();
-                        if (checkEmail == false && checkFill == false && 
-                            commentName != null && commentEmail != null && 
-                            commentContent != null && commentName != "" && commentEmail != "" && 
-                            commentContent != "") {
+                        onClick={(event) => {
+                            handleUnFill();
+                            handleCheckEmail();
+                            if (checkEmail == false && checkFill == false &&
+                                commentName != null && commentEmail != null &&
+                                commentContent != null && commentName != "" && commentEmail != "" &&
+                                commentContent != "") {
                                 // handleSubmitBtn();
                                 handleInputSubmit(event);
-                        }
-                    }}>Gửi đánh giá</div>
+                            }
+                        }}>Gửi đánh giá</div>
                     <div class="comment-form-btn" id="comment-btn-cancel"
-                    onClick={handleCloseBtn}
+                        onClick={handleCloseBtn}
                     >Đóng</div>
                 </div>
-                
+
             </div>
         </div>
     );
 }
 
-function CommentList () {
+function CommentList() {
 
     console.log(comments);
 
@@ -484,9 +492,9 @@ function CommentList () {
                         <div class="comment-item-header">
 
                             <div class="header-image">
-                                <FaUserAlt style={{color: "#133B3D"}}/>
+                                <FaUserAlt style={{ color: "#133B3D" }} />
                             </div>
-                            
+
                             <div class="header-info">
 
                                 <div class="header-author">
@@ -507,14 +515,14 @@ function CommentList () {
 
                         <div class="comment-item-judge">
                             <div class="j-text"> Xếp hạng: </div>
-                            <Rating name="read-only" value={Number(item.comment_rate)} readOnly /> 
+                            <Rating name="read-only" value={Number(item.comment_rate)} readOnly />
                         </div>
 
                     </div>
                 </div>
-                }
+            }
             )
-            }  
+            }
         </div>
     );
 };
