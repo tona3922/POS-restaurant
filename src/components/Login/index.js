@@ -17,19 +17,19 @@ import CloseIcon from "@mui/icons-material/Close";
 import { Link } from "react-router-dom";
 import { darken } from "@mui/material";
 
-function Login() {
-  const SubmitButton = styled(Button)({
-    color: "white",
-    backgroundColor: "#133B3D",
-    "&:hover": {
-      backgroundColor: darken("#133B3D", 0.1),
-    },
-    borderRadius: "2em",
-    padding: "10px",
-    boxShadow:
-      "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)",
-  });
+export const SubmitButton = styled(Button)({
+  color: "white",
+  backgroundColor: "#133B3D",
+  "&:hover": {
+    backgroundColor: darken("#133B3D", 0.1),
+  },
+  borderRadius: "2em",
+  padding: "10px",
+  boxShadow:
+    "0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)",
+});
 
+export function Login() {
   const [open, setOpen] = React.useState(false);
   const handleClickOpen = () => {
     setOpen(true);
@@ -127,5 +127,3 @@ function Login() {
     </div>
   );
 }
-
-export default Login;

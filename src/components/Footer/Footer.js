@@ -11,7 +11,7 @@ function Footer() {
   return (
     <div className="footer">
       <div className="footer-container">
-        {width <= 991 ? <MobileView></MobileView> : <DesktopView></DesktopView>}
+        {width <= 992 ? <MobileView></MobileView> : <DesktopView></DesktopView>}
         <Divider sx={{ borderColor: "white" }}></Divider>
         <div className="footer-bottom">
           <div className="footer-bottom-left">

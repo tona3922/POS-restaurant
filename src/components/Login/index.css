@@ -24,8 +24,8 @@
 }
 
 .form-area {
-  width: 550px;
-  padding: 50px 15px;
+  width: 100%;
+  padding: 50px 10%;
   margin: 0 auto;
 }
 .forget-password-title {
@@ -51,12 +51,12 @@
   display: flex;
   flex-direction: column;
   padding-top: 30px;
-  row-gap: 15px;
+  row-gap: 20px;
 }
 
 .form-area h1 {
   font-family: "Oswald", sans-serif;
-  font-size: 32px;
+  font-size: 40px;
   font-weight: 400;
 }
 
@@ -68,4 +68,19 @@
 
 a {
   text-decoration: none;
+}
+
+@media only screen and (max-width: 992px) {
+  .login-container {
+    flex-direction: column;
+    padding: 0 30px;
+  }
+  .left-block {
+    width: 100%;
+    order: 2;
+  }
+  .right-block {
+    order: 1;
+    width: 100%;
+  }
 }
