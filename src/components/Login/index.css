@@ -1,0 +1,71 @@
+.login-container {
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
+  margin-top: 110px;
+  /* height: 100px; */
+  /* background-color: yellow; */
+  display: flex;
+}
+
+.left-block {
+  width: 50%;
+}
+
+.left-block img {
+  width: 100%;
+  /* object-fit: cover; */
+  height: 100%;
+}
+
+.right-block {
+  width: 50%;
+}
+
+.form-area {
+  width: 550px;
+  padding: 50px 15px;
+  margin: 0 auto;
+}
+.forget-password-title {
+  font-family: "Oswald", sans-serif;
+  display: flex;
+  justify-content: center;
+  font-size: 35px;
+  line-height: 1.2em;
+}
+
+.title-small {
+  font-family: "Oswald", sans-serif;
+  font-size: 28px;
+}
+
+.forget-password-link {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.login-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  row-gap: 15px;
+}
+
+.form-area h1 {
+  font-family: "Oswald", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.signup-link {
+  margin: 25px 0;
+  /* display: flex;
+  justify-content: center; */
+}
+
+a {
+  text-decoration: none;
+}
