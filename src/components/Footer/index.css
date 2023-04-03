@@ -27,6 +27,15 @@
   /* margin: 0 5px; */
 }
 
+.footer-top {
+  padding-left: 16px;
+  padding-top: 16px;
+}
+
+.footer-middle {
+  margin-top: 30px;
+}
+
 .footer-bottom {
   display: flex;
   justify-content: space-between;
