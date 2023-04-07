@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 import "./MenuDetail.scss";
-import test from "../image/test.jpg";
+import { Cart } from "../cart/cart";
+import test from "../../../foodimg/mainfood.webp";
 import minus from "../image/minus-sign.png";
 import plus from "../image/plus.png";
-import { Menuslidetab } from "../tabs/menuslide-tab/menuslide_tab";
-import Feature from "../tabs/feature";
-import { myarr } from "../tabs/index.js";
 // import store from "../store/store";
-// import { useSelector, useDispatch } from "react-redux";
-
+import { useDispatch, useSelector } from "react-redux";
+import { increasebyAmount, decreasebyAmount, cnt } from "../store/cart";
 export const MenuDetail = () => {
-  // const count = useSelector((state) => state.counter);
-  // const dispatch = useDispatch();
-  // const handleIncrement = () => {
-  //   dispatch({ type: "INCREMENT" });
-  // };
-
-  // const handleDecrement = () => {
-  //   dispatch({ type: "DECREMENT" });
-  // };
-  const [list, setList] = useState(false);
   const [count, setCount] = useState(1);
   const [price, setPrice] = useState(20);
-  const [total, setTotal] = useState(price);
+  const val = useSelector(cnt);
+  // console.log(useSelector(myname));
   const increase = (count) => {
     setCount(count);
     setPrice(count * 20);
@@ -36,12 +25,8 @@ export const MenuDetail = () => {
       setPrice(0);
     }
   };
-  const updateprice = (total) => {
-    setTotal((pretotal) => ({
-      ...pretotal,
-      [total]: pretotal[total] + 1,
-    }));
-  };
+  const dispatch = useDispatch();
+
   return (
     // <div className="body">
     <div>
@@ -50,6 +35,7 @@ export const MenuDetail = () => {
         <div className="back">
           <span>&#8610;</span> <div>Back</div>
         </div>
+        {val > 0 ? <Cart /> : <></>}
         <div className="detail_page">
           <div className="left">
             <div className="image">
@@ -69,17 +55,12 @@ export const MenuDetail = () => {
                 </p>
               </div>
               <hr />
-              {list && (
-                <div className="additional_list">
-                  <div className="list_title">list</div>
-                  <div className="list"></div>
-                </div>
-              )}
               <div className="detailbill">
                 <div className="editquantity">
                   <button
                     onClick={() => {
                       decrease(count - 1);
+                      dispatch(decreasebyAmount(20));
                     }}
                     // onClick={handleIncrement}
                   >
@@ -90,6 +71,8 @@ export const MenuDetail = () => {
                     // onClick={handleDecrement}
                     onClick={() => {
                       increase(count + 1);
+                      dispatch(increasebyAmount(20));
+                      // dispatch(pushname({ name: "chicken", price: 20 }));
                     }}
                   >
                     <img src={plus} alt="" />
@@ -97,19 +80,8 @@ export const MenuDetail = () => {
                 </div>
                 <div className="price">Price : {price}$</div>
               </div>
-              <div>Total: {total}$</div>
             </div>
           </div>
-        </div>
-        <Menuslidetab />
-        <Feature price={price} onChange={updateprice} />
-        <div className="fragment">
-          {myarr.map((arr) => (
-            <div className={arr.key}>
-              <div>{arr.key}</div>
-              <div>{arr.name}</div>
-            </div>
-          ))}
         </div>
       </div>
     </div>

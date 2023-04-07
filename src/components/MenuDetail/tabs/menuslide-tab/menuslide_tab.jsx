@@ -54,6 +54,17 @@ export const Menuslidetab = () => {
         <SwiperSlide className="item">
           <div className="menuitem">
             <Link
+              to="/chefbox"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <img src={osechi} alt="" />
+              <div className="itemname">Chef's Box</div>
+            </Link>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="item">
+          <div className="menuitem">
+            <Link
               to="/salad"
               style={{ textDecoration: "none", color: "black" }}
             >
@@ -76,20 +87,32 @@ export const Menuslidetab = () => {
         </SwiperSlide>
         <SwiperSlide className="item">
           <div className="menuitem">
-            <img src={sashimi} alt="" />
-            <div className="itemname">sashimi</div>
+            <Link
+              to="/sashimi"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <img src={sashimi} alt="" />
+              <div className="itemname">sashimi</div>
+            </Link>
           </div>
         </SwiperSlide>
         <SwiperSlide className="item">
           <div className="menuitem">
-            <img src={sake} alt="" />
-            <div className="itemname">sake</div>
+            <Link to="/sake" style={{ textDecoration: "none", color: "black" }}>
+              <img src={sake} alt="" />
+              <div className="itemname">sake</div>
+            </Link>
           </div>
         </SwiperSlide>
         <SwiperSlide className="item">
           <div className="menuitem">
-            <img src={ramen} alt="" />
-            <div className="itemname">ramen</div>
+            <Link
+              to="/noodle"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <img src={ramen} alt="" />
+              <div className="itemname">noodle</div>
+            </Link>
           </div>
         </SwiperSlide>
         <SwiperSlide className="item">
@@ -100,43 +123,11 @@ export const Menuslidetab = () => {
         </SwiperSlide>
         <SwiperSlide className="item">
           <div className="menuitem">
-            <img src={osechi} alt="" />
-            <div className="itemname">osechi</div>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide className="item">
-          <div className="menuitem">
             <img src={mochi} alt="" />
             <div className="itemname">mochi</div>
           </div>
         </SwiperSlide>
       </Swiper>
-      {/* <div className="slider">
-        <div className="edit">
-          <img src={left} alt="" />
-        </div>
-        <div className="menu">
-          <div className="menuitem">
-            <img src={frchick} alt="" />
-            <div className="itemname">chicken</div>
-          </div>
-          <div className="menuitem">
-            <img src={drinks} alt="" />
-            <div className="itemname">drinks</div>
-          </div>
-          <div className="menuitem">
-            <img src={pasta} alt="" />
-            <div className="itemname">pasta</div>
-          </div>
-          <div className="menuitem">
-            <img src={salad} alt="" />
-            <div className="itemname">salad</div>
-          </div>
-        </div>
-        <div className="edit">
-          <img src={right} alt="" />
-        </div>
-      </div> */}
     </div>
   );
 };

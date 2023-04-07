@@ -1,26 +1,9 @@
-import { createStore } from "redux";
+import { configureStore } from "@reduxjs/toolkit";
 
-const initialState = {
-  counter: 1,
-};
-
-function reducer(state = initialState, action) {
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        ...state,
-        counter: state.counter + 1,
-      };
-    case "DECREMENT":
-      return {
-        ...state,
-        counter: state.counter - 1,
-      };
-    default:
-      return state;
-  }
-}
-
-const store = createStore(reducer);
-
+import cart from "./cart";
+const store = configureStore({
+  reducer: {
+    value: cart,
+  },
+});
 export default store;
