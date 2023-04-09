@@ -1,11 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
 .main-page{
     @media screen  and  (min-width: 1600px) {
         display: flex;
-        margin: 3vh 13vw ;
+        // margin: 3vh 13vw ;
         
         margin: auto;
-        width: 74%;
+        width: 76%;
         flex-direction: column;
         justify-content: center;
     }
@@ -18,6 +18,17 @@
         width: 100%;
         flex-direction: column;
         justify-content: center;
+    }
+    .tag-combo {
+
+        margin-left: 0.5em;
+        margin-bottom: 10px;
+        margin-top: 1em;
+        font-family: 'Oswald' !important;
+        font-weight: bold;
+        font-size: 2rem;
+        text-align: left;
+        display: flex;
     }
     .menu {
         @media screen  and  (min-width: 800px) {

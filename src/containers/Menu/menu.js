@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import Header from '../../components/Header/header'
+// import Header from '../../components/Header/header'
 import './menu.scss'
 import FoodCard from '../../components/FoodCard/foodCard'
+import MenuNavBar from 'components/MenuNavBar/menuNav'
+// import './menu-nameblank.scss'
 
 const Menu = () => {
     const [menuDishes, setMenu] = useState([
@@ -113,7 +115,10 @@ const Menu = () => {
     ])
     return (
         <div className="main-page">
-            <Header />
+            {/* <Header /> */}
+            <MenuNavBar></MenuNavBar>
+            <div className="tag-combo">MÓN MỚI</div>
+
             <div className="menu">
                 {menuDishes.map(dish => <FoodCard {...dish} />)}
             </div>

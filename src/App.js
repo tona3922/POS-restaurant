@@ -1,16 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import Menu from './containers/Menu/menu';
-import Comment from './containers/Comment/comment';
+// import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ErrorPage from "./error-page";
+import LoginPage from "./containers/LoginPage";
+import Root from "./containers/Root";
+import SignupPage from "./containers/SignupPage"
+import Menu from "containers/Menu/menu";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "login",
+        element: <LoginPage />,
+      },
+      {
+        path: "signup",
+        element: <SignupPage />,
+      },
+      {
+        path: "menu",
+        element: <Menu />,
+      }
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <div className="App">
-      { /* put routes here*/}
-      {/* <Menu /> */}
-      <Comment />
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
