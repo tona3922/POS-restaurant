@@ -39,13 +39,13 @@ export function Login() {
     setOpen(false);
   };
   return (
-    <div className="login-container">
+    <div className="page-container">
       <div className="left-block">
         <img src={Banner} alt="" />
       </div>
       <div className="right-block">
         <div className="form-area">
-          <h1>Đăng nhập</h1>
+          <h1 className="big-title">Đăng nhập</h1>
           <Box
             component="form"
             noValidate

@@ -1,5 +1,5 @@
-import Footer from "components/Footer/Footer";
-import Header from "components/Header/Header";
+import Footer from "components/Footer";
+import Header from "components/Header";
 import React from "react";
 import { Outlet } from "react-router-dom";
 const Root = () => {
@@ -7,7 +7,7 @@ const Root = () => {
     <>
       <Header />
       {/* your page stays here */}
-      <div className="page">
+      <div className="page" style={{ marginTop: "110px" }}>
         <Outlet />
       </div>
       <Footer />

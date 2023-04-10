@@ -1,0 +1,42 @@
+.summary-block {
+  flex: 31%;
+  flex-grow: 0;
+}
+
+.summary-container {
+  position: sticky;
+  top: 220px;
+  padding: 30px 20px;
+}
+
+.card-container {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.medium-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.coupon {
+  padding-bottom: 20px;
+}
+
+.space-between-display {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.price-space {
+  margin: 10px 0;
+}
+
+.divider {
+  height: 1px;
+  margin: 20px auto;
+  background-color: black;
+}

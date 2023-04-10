@@ -4,6 +4,7 @@ import ErrorPage from "./error-page";
 import LoginPage from "containers/LoginPage";
 import Root from "containers/Root";
 import SignupPage from "containers/SignupPage";
+import { CartPage } from "containers/Cart";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "signup",
         element: <SignupPage />,
+      },
+      {
+        path: "cart",
+        element: <CartPage />,
       },
     ],
   },

@@ -1,0 +1,74 @@
+.food-view-container {
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.food-cart-image {
+  height: 170px;
+  width: 250px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.food-info {
+  display: flex;
+}
+
+.food-name-detail {
+  padding: 32px 0 0 16px;
+}
+
+.food-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.food-detail ul {
+  list-style-type: none;
+  padding-left: 18px;
+  font-size: 0.875rem;
+}
+
+/* li {
+  transition: all 0.5s ease-in-out;
+} */
+
+.edit-action {
+  padding-top: 20px;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.edit-action button {
+  text-decoration: underline;
+}
+
+.edit-action button:hover {
+  text-decoration: none;
+}
+
+a {
+  color: black;
+}
+
+.add-action {
+  padding-top: 32px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.add-action div:first-child {
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.add-action button {
+  border-radius: 100%;
+  border: 1px solid black;
+}
+
+.MuiIconButton-root.Mui-disabled {
+  border-color: rgba(0, 0, 0, 0.26);
+}

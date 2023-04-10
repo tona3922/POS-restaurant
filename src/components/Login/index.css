@@ -1,11 +1,8 @@
-.login-container {
+.page-container {
   max-width: 1300px;
   width: 100%;
   padding: 0 15px;
   margin: auto;
-  margin-top: 110px;
-  /* height: 100px; */
-  /* background-color: yellow; */
   display: flex;
 }
 
@@ -54,7 +51,7 @@
   row-gap: 20px;
 }
 
-.form-area h1 {
+.big-title {
   font-family: "Oswald", sans-serif;
   font-size: 40px;
   font-weight: 400;
