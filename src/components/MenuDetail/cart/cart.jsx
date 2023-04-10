@@ -29,18 +29,25 @@ export const Cart = () => {
         <div className="list">
           {namelist.map((item) => {
             return (
-              <div className="package">
-                <div className="itemtitle">{item[0]}: </div>
-                <div className="detail">
-                  <button onClick={() => upper(item[0], item[2])}>
-                    <img src={plus} alt="" />
-                  </button>
-                  {item[1]}
-                  <button onClick={() => lower(item[0], item[1], item[2])}>
-                    <img src={minus} alt="" />
-                  </button>
-                </div>
+              <div>
+                {item[1] <= 0 ? (
+                  ""
+                ) : (
+                  <div className="package">
+                    <div className="itemtitle">{item[0]}: </div>
+                    <div className="detail">
+                      <button onClick={() => upper(item[0], item[2])}>
+                        <img src={plus} alt="" />
+                      </button>
+                      {item[1]}
+                      <button onClick={() => lower(item[0], item[1], item[2])}>
+                        <img src={minus} alt="" />
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
+              // }
             );
           })}
         </div>

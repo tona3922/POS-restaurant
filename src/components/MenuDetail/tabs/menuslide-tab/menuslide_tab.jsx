@@ -1,7 +1,5 @@
 import React from "react";
-// , { useState, useRef }
 import drinks from "../../image/drinks.png";
-import frchick from "../../image/fried-chicken.png";
 import pasta from "../../image/pasta.png";
 import salad from "../../image/salad.png";
 import ramen from "../../image/ramen.png";
@@ -33,12 +31,6 @@ export const Menuslidetab = () => {
         navigation
         className="slider"
       >
-        <SwiperSlide className="item">
-          <div className="menuitem">
-            <img src={frchick} alt="" />
-            <div className="itemname">chicken</div>
-          </div>
-        </SwiperSlide>
         <SwiperSlide className="item">
           <div className="menuitem">
             <img src={drinks} alt="" />

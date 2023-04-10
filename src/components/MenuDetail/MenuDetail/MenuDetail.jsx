@@ -4,7 +4,13 @@ import { Cart } from "../cart/cart";
 import test from "../../../foodimg/mainfood.webp";
 import minus from "../image/minus-sign.png";
 import plus from "../image/plus.png";
-// import store from "../store/store";
+// import Header from "components/Header/header";
+// import Footer from "components/Footer/Footer";
+// import { Standard } from "../tabs/standard/standard";
+// import { SALAD } from "../tabs/storage/salad";
+// import { CHEFBOX } from "../tabs/storage/chefbox";
+// import { NOODLE } from "../tabs/storage/udon";
+import { Menuslidetab } from "../tabs/menuslide-tab/menuslide_tab";
 import { useDispatch, useSelector } from "react-redux";
 import { increasebyAmount, decreasebyAmount, cnt } from "../store/cart";
 export const MenuDetail = () => {
@@ -28,13 +34,9 @@ export const MenuDetail = () => {
   const dispatch = useDispatch();
 
   return (
-    // <div className="body">
     <div>
+      {/* <Header /> */}
       <div className="mybody">
-        <div className="pagetitle">Detail page</div>
-        <div className="back">
-          <span>&#8610;</span> <div>Back</div>
-        </div>
         {val > 0 ? <Cart /> : <></>}
         <div className="detail_page">
           <div className="left">
@@ -84,6 +86,7 @@ export const MenuDetail = () => {
           </div>
         </div>
       </div>
+      <Menuslidetab />
     </div>
   );
 };

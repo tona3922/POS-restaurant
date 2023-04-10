@@ -1,0 +1,25 @@
+.nav-container {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    // align-items: center;
+    // justify-content: center;
+    // margin-left: auto;
+    position: sticky;
+    top: 110px;
+    border-bottom: 1px solid #00000026;
+    background-color: #fff;
+    z-index: 3;
+    .navTag {
+        // position: sticky;
+        width: fit;
+        margin: 0 30px;
+        font-family: 'Oswald';
+        font-size: 1.3em;
+        white-space: nowrap
+    }
+}
