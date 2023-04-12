@@ -35,7 +35,6 @@ export const MenuDetail = () => {
 
   return (
     <div>
-      {/* <Header /> */}
       <div className="mybody">
         {val > 0 ? <Cart /> : <></>}
         <div className="detail_page">
