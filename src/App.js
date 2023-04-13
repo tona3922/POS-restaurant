@@ -1,10 +1,11 @@
 // import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ErrorPage from "./error-page";
+import ErrorPage from "error-page";
 import LoginPage from "containers/LoginPage";
 import Root from "containers/Root";
 import SignupPage from "containers/SignupPage";
 import { CartPage } from "containers/Cart";
+import Menu from "containers/Menu/menu";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: "cart",
         element: <CartPage />,
+      },
+      {
+        path: "menu",
+        element: <Menu />,
       },
     ],
   },
