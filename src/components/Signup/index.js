@@ -1,20 +1,19 @@
 import React from "react";
 import "./index.css";
 import Banner from "assets/logo/Banner.png";
-import { TextField, Box, Checkbox } from "@mui/material";
+import { TextField, Box, Checkbox, darken } from "@mui/material";
 import { Link } from "react-router-dom";
 import { SubmitButton } from "components/Login";
-import { darken } from "@mui/material";
 
 function Signup() {
   return (
-    <div className="login-container">
+    <div className="page-container">
       <div className="left-block">
         <img src={Banner} alt="" />
       </div>
       <div className="right-block">
         <div className="form-area">
-          <h1>Tạo tài khoản</h1>
+          <h1 className="big-title">Tạo tài khoản</h1>
           <Box
             component="form"
             noValidate

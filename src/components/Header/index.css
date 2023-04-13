@@ -1,6 +1,6 @@
 header {
   position: sticky;
-  width: 100vw;
+  /* width: 100vw; */
   height: 109px;
   background-color: white;
   z-index: 100;
