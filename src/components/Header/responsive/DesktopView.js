@@ -22,6 +22,7 @@ import { styled } from "@mui/system";
 import { DrawerContent } from "constants/drawerContent";
 import Button from "@mui/material/Button";
 import { useViewport } from "utils/useViewport";
+import { Link } from "react-router-dom";
 
 function DesktopView() {
   const width = useViewport();
@@ -99,24 +100,33 @@ function DesktopView() {
           <img alt="logo" src={FullLogo} className="full-logo-header" />
         </IconButton>
 
-        <HeaderButton>Thực đơn</HeaderButton>
+        <Link to={"/menu"}>
+          <HeaderButton>Thực đơn</HeaderButton>
+        </Link>
+
         <HeaderButton>Khuyến mãi</HeaderButton>
         <HeaderButton>Hệ thống nhà hàng</HeaderButton>
         <HeaderButton>Blog</HeaderButton>
       </div>
       <div className="header-right">
-        <IconButton>
-          <AccountCircleIcon
-            fontSize={width <= 991 ? "medium" : "large"}
-            color="black"
-          />
-        </IconButton>
-        <IconButton>
-          <AddShoppingCartIcon
-            fontSize={width <= 991 ? "medium" : "large"}
-            color="black"
-          />
-        </IconButton>
+        <Link to={"/login"}>
+          <IconButton>
+            <AccountCircleIcon
+              fontSize={width <= 991 ? "medium" : "large"}
+              color="black"
+            />
+          </IconButton>
+        </Link>
+
+        <Link to={"/cart"}>
+          <IconButton>
+            <AddShoppingCartIcon
+              fontSize={width <= 991 ? "medium" : "large"}
+              color="black"
+            />
+          </IconButton>
+        </Link>
+
         <React.Fragment>
           <IconButton onClick={toggleDrawer(true)}>
             <ViewHeadlineIcon

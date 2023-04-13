@@ -7,7 +7,7 @@ const Root = () => {
     <>
       <Header />
       {/* your page stays here */}
-      <div className="page" style={{ marginTop: "110px" }}>
+      <div className="page">
         <Outlet />
       </div>
       <Footer />
