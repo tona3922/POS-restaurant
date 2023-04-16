@@ -17,21 +17,25 @@ export const CartPage = () => {
   }
 
   const [totalPrice, setTotalPrice] = useState(sum);
+  const [numOfDish, setNumOfDish] = useState(cartData.length);
 
-  const onEditFood = (money, add) => {
+  const onEditFood = (money, add, deleted = false) => {
     //money is the amount changed
     if (add) {
       setTotalPrice(totalPrice + money);
     } else setTotalPrice(totalPrice - money);
+    if (deleted) {
+      setNumOfDish(numOfDish - 1);
+    }
   };
 
   return (
     <div className="page-container cart-page">
       <CartList
         data={cartData}
-        onEditFood={(money, add) => onEditFood(money, add)}
+        onEditFood={(money, add, deleted) => onEditFood(money, add, deleted)}
       ></CartList>
-      <Summary price={totalPrice} num={cartData.length}></Summary>
+      <Summary price={totalPrice} num={numOfDish}></Summary>
     </div>
   );
 };
