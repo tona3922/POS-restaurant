@@ -1,49 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
-.main-page{
-    @media screen  and  (min-width: 1600px) {
-        display: flex;
-        // margin: 3vh 13vw ;
-        
-        margin: auto;
-        width: 76%;
-        flex-direction: column;
-        justify-content: center;
-    }
-    // min-width: 1500px;
-    @media screen and (max-width: 1200px) {
-        display: flex;
-        margin: 3vh 6vw ;
-        
-        margin: auto;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-    }
-    .tag-combo {
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+.main-page {
+  @media screen and (min-width: 1600px) {
+    display: flex;
+    // margin: 3vh 13vw ;
 
-        margin-left: 0.5em;
-        margin-bottom: 10px;
-        margin-top: 1em;
-        font-family: 'Oswald' !important;
-        font-weight: bold;
-        font-size: 2rem;
-        text-align: left;
-        display: flex;
+    margin: auto;
+    width: 76%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  // min-width: 1500px;
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    margin: 3vh 6vw;
+
+    margin: auto;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tag-combo {
+    margin-left: 0.5em;
+    margin-bottom: 10px;
+    margin-top: 1em;
+    font-family: "Oswald" !important;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: left;
+    display: flex;
+  }
+  .menu {
+    .Carrt {
+      //   width: 25%;
+      flex: 0 0 22.5%;
+      padding: 10px;
+      margin: 0 0.3963vw 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      // border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0);
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
     }
-    .menu {
-        @media screen  and  (min-width: 800px) {
-            width: 100%;
-            flex-flow: wrap;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-        }
-        @media screen  and  (max-width: 500px) {
-            width: 100%;
-            flex-flow: wrap;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+    @media screen and (min-width: 800px) {
+      width: 100%;
+      flex-flow: wrap;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
     }
+    @media screen and (max-width: 500px) {
+      width: 100%;
+      flex-flow: wrap;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
 }

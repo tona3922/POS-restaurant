@@ -29,11 +29,11 @@ const router = createBrowserRouter([
         element: <SignupPage />,
       },
       {
-        path: "menu",
+        path: "menu/*",
         element: <Menu />,
       },
       {
-        path: "detail",
+        path: "detail/:id",
         element: <MenuDetail />,
       },
       {
@@ -41,23 +41,23 @@ const router = createBrowserRouter([
         element: <Delivery />,
       },
       {
-        path: "/salad",
+        path: "detail/:id/salad",
         element: <Standard props={SALAD} title={"Salad"} />,
       },
       {
-        path: "/chefbox",
+        path: "detail/:id/chefbox",
         element: <Standard props={CHEFBOX} title={"Chef's box"} />,
       },
       {
-        path: "/noodle",
+        path: "detail/:id/noodle",
         element: <Standard props={NOODLE} title={"Noodle"} />,
       },
       {
-        path: "/sake",
+        path: "detail/:id/sake",
         element: <Standard props={SAKE} title={"Noodle"} />,
       },
       {
-        path: "/sashimi",
+        path: "detail/:id/sashimi",
         element: <Standard props={SASHIMI} title={"Sashimi"} />,
       },
     ],
