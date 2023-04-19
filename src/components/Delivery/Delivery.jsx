@@ -4,8 +4,11 @@ import pay2 from "./money.png";
 import "./Delivery.scss";
 import { SubmitButton } from "components/Login";
 import { TextField, Box, Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
 
 export const Delivery = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="deliverypage">
       <div className="big-title">Thông tin đặt hàng</div>
@@ -47,7 +50,13 @@ export const Delivery = () => {
             </div>
           </Button>
         </div>
-        <SubmitButton fullWidth sx={{ marginTop: "20px" }}>
+        <SubmitButton
+          fullWidth
+          sx={{ marginTop: "20px" }}
+          onClick={() => {
+            navigate("/my-account/previous-orders");
+          }}
+        >
           Đặt hàng
         </SubmitButton>
       </div>

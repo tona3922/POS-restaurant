@@ -20,6 +20,11 @@ function Profile() {
           label="Địa chỉ email của bạn"
           variant="standard"
         />
+        <TextField
+          id="standard-basic"
+          label="Số điện thoại"
+          variant="standard"
+        />
         <SubmitButton fullWidth>Cập nhật tài khoản</SubmitButton>
       </Box>
     </div>

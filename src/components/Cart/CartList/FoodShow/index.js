@@ -60,7 +60,7 @@ function FoodShow({ src, detail, name, price, quantity, onEditFood }) {
               <ul>{showDetail && detail.map((item) => <li>{item}</li>)}</ul>
             </div>
             <div className="edit-action">
-              <Link to={"/menu"}>
+              <Link to={"/detail/1/"}>
                 <Button
                   variant="standard"
                   sx={{ textTransform: "none", fontWeight: "600" }}
