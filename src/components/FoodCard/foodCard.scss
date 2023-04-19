@@ -1,6 +1,7 @@
 .foodCard {
     // width: 25%;
-    flex: 0 0 22.5%;
+    // flex: 0 0 30%;
+    width: 25%;
     padding: 10px;
     margin: 0 0.3963vw 20px;
     display: flex;
@@ -64,16 +65,16 @@
     .addtoCart {
         // height: px;
         width: 90%;
-        padding: 10px;
+        // padding: 10px;
         margin-bottom: 10px;
-        background-color: rgba(38, 29, 29, 0.341);
+        // background-color:  rgb(17, 53, 54);
         margin-top: auto;
-        color: #fff;
-        text-decoration: none;
-        text-align: center;
-        vertical-align: middle;
-        line-height: 30px;
-        border-radius: 900px;
+        // color: white;
+        text-transform: none;
+        // text-align: center;
+        // vertical-align: middle;
+        // line-height: 30px;
+        // border-radius: 900px;
         // &:visited
     }
 }

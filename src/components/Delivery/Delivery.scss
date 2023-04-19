@@ -1,6 +1,8 @@
 .deliverypage {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 10px auto;
+  padding: 50px 15px 20px 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -52,6 +54,7 @@
   .payment {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
     padding-bottom: 20px;
     .option {
@@ -60,27 +63,27 @@
       button {
         width: 400px;
         height: 50px;
+        color: black;
+        font-weight: 500;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-radius: 5px;
-        border: 0.8px solid black;
-        background-color: transparent;
+        border: 1px solid black;
         padding-left: 30px;
         padding-right: 30px;
-        cursor: pointer;
+        // cursor: pointer;
         .name {
-          font-size: 20px;
+          color: white;
         }
         .imag {
           img {
             width: 30px;
           }
         }
-        &:hover,
-        &:active {
-          background-color: rgb(226, 226, 226);
-        }
+        // &:hover,
+        // &:active {
+        //   background-color: rgb(226, 226, 226);
+        // }
       }
     }
   }
@@ -92,5 +95,12 @@
     border-radius: 20px;
     width: 300px;
     height: 50px;
+  }
+  .delivery-content{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px ;
+    row-gap: 20px;
   }
 }

@@ -15,6 +15,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { increasebyAmount, decreasebyAmount, cnt } from "../store/cart";
 import { useParams } from "react-router-dom";
 import Comment from "containers/Comment/comment";
+
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
+import { SubmitButton } from "components/Login";
+import { IconButton } from "@mui/material";
+
 export const MenuDetail = () => {
   const [menuDishes, setMenu] = useState([
     {
@@ -154,14 +160,14 @@ export const MenuDetail = () => {
       <div className="mybody">
         {val > 0 ? <Cart /> : <></>}
         <div className="detail_page">
-          <div className="left">
+          <div className="left" style={{ backgroundImage: `url(${test})` }}>
             <div className="image">
               <img src={test} alt="" />
             </div>
           </div>
           <div className="right">
             <div className="info">
-              <div className="title">{menuDishes[id - 1].title}</div>
+              <div className="medium-title">{menuDishes[id - 1].title}</div>
               <hr />
               <div className="description">
                 <p>
@@ -174,17 +180,17 @@ export const MenuDetail = () => {
               <hr />
               <div className="detailbill">
                 <div className="editquantity">
-                  <button
+                  <IconButton
                     onClick={() => {
                       decrease(count - 1);
                       dispatch(decreasebyAmount(20));
                     }}
                     // onClick={handleIncrement}
                   >
-                    <img src={minus} alt="" />
-                  </button>
+                    <RemoveIcon></RemoveIcon>
+                  </IconButton>
                   <h3>{count}</h3>
-                  <button
+                  <IconButton
                     // onClick={handleDecrement}
                     onClick={() => {
                       increase(count + 1);
@@ -192,10 +198,12 @@ export const MenuDetail = () => {
                       // dispatch(pushname({ name: "chicken", price: 20 }));
                     }}
                   >
-                    <img src={plus} alt="" />
-                  </button>
+                    <AddIcon></AddIcon>
+                  </IconButton>
                 </div>
-                <div className="price">Price : {price}$</div>
+                <SubmitButton className="price">
+                  Thêm vào giỏ : {price}$
+                </SubmitButton>
               </div>
             </div>
           </div>

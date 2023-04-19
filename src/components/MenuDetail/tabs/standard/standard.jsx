@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { increasebyAmount, cnt, myname, pushname } from "../../store/cart";
 import Comment from "containers/Comment/comment";
 import { MenuDetail } from "components/MenuDetail/MenuDetail/MenuDetail";
+import { SubmitButton } from "components/Login";
 import "./standard.scss";
 
 export const Standard = (props) => {
@@ -132,20 +133,33 @@ export const Standard = (props) => {
         <div className="morefood">
           <div className="partial">
             <div className="choose">
-              <h2>{props.title}</h2>
+              <h2 className="medium-title">{props.title}</h2>
             </div>
             <div className="container">
               {products.map((product) => {
                 return (
                   <div className="card">
-                    <img src={product.img} alt="" />
-                    <h3>{product.title}</h3>
-                    <h3>{product.price}$</h3>
-                    <button
+                    <div
+                      className="product-image"
+                      style={{ backgroundImage: `url(${product.img})` }}
+                    ></div>
+
+                    <div className="pricetag">
+                      <h3>{product.title}</h3>
+                      <h3>{product.price}$</h3>
+                    </div>
+
+                    <SubmitButton
+                      sx={{
+                        textTransform: "none",
+                        width: "90%",
+                        marginTop: "auto",
+                        marginBottom: "10px",
+                      }}
                       onClick={() => handleclick(product.price, product.title)}
                     >
-                      Add more
-                    </button>
+                      Thêm vào giỏ
+                    </SubmitButton>
                   </div>
                 );
               })}

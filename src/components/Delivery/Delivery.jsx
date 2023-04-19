@@ -2,61 +2,55 @@ import React from "react";
 import pay1 from "./pay1.png";
 import pay2 from "./money.png";
 import "./Delivery.scss";
+import { SubmitButton } from "components/Login";
+import { TextField, Box, Button } from "@mui/material";
 
 export const Delivery = () => {
   return (
     <div className="deliverypage">
-      <div className="pagetitle">Thong tin</div>
-      <div className="cover">
-        <div className="cover_title">Delivery Form</div>
-        <div className="formcover">
-          <div className="form">
-            <div className="cover">
-              <div className="upper">
-                <div className="title">Họ và tên</div>
-              </div>
-              <input type="text" />
-            </div>
-            <div className="cover">
-              <div className="upper">
-                <div className="title">Tên của bạn</div>
-              </div>
-              <input type="text" />
-            </div>
-            <div className="cover">
-              <div className="upper">
-                <div className="title">Số điện thoại</div>
-              </div>
-              <input type="text" />
-            </div>
-            <div className="cover">
-              <div className="upper">
-                <div className="title">Địa chỉ email</div>
-              </div>
-              <input type="text" />
-            </div>
-          </div>
-        </div>
-      </div>
+      <div className="big-title">Thông tin đặt hàng</div>
+      <Box
+        component="form"
+        noValidate
+        autoComplete="off"
+        className="delivery-content"
+      >
+        <TextField id="standard-basic" label="Họ của bạn" variant="standard" />
+
+        <TextField id="standard-basic" label="Tên của bạn" variant="standard" />
+        <TextField
+          id="standard-basic"
+          label="Địa chỉ email của bạn"
+          variant="standard"
+        />
+        <TextField
+          id="standard-basic"
+          label="Số điện thoại"
+          variant="standard"
+        />
+      </Box>
       <div className="payment">
+        <div className="big-title">Phương thức thanh toán</div>
         <div className="option">
-          <button>
-            <div className="name">Thanh toán qua zalopay</div>
+          <Button variant="outlined">
+            <div>Thanh toán qua zalopay</div>
             <div className="imag">
               <img src={pay1} alt="" />
             </div>
-          </button>
+          </Button>
         </div>
         <div className="option">
-          <button>
+          <Button variant="contained">
             <div className="name">Thanh toán bằng tiền mặt</div>
             <div className="imag">
               <img src={pay2} alt="" />
             </div>
-          </button>
+          </Button>
         </div>
+        <SubmitButton fullWidth sx={{ marginTop: "20px" }}>
+          Đặt hàng
+        </SubmitButton>
       </div>
-      <button className="btn">Buy</button>
     </div>
   );
 };

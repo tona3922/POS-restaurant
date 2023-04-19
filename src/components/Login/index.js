@@ -40,7 +40,7 @@ export function Login() {
   };
   return (
     <div className="page-container">
-      <div className="left-block">
+      <div className="left-block" style={{ backgroundImage: `url(${Banner})` }}>
         <img src={Banner} alt="" />
       </div>
       <div className="right-block">

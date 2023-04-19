@@ -7,6 +7,10 @@
   // margin: auto;
   // padding-top: 30px;
   // width: 80%;
+  max-width: 1300px;
+  width: 100%;
+  padding: 0 15px;
+  margin: auto;
   .pagetitle {
     font-size: 30px;
     color: white;
@@ -28,26 +32,33 @@
     }
   }
   .detail_page {
+    margin: 20px 0;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
     gap: 30px;
     .left {
       display: flex;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
       .image {
         img {
-          width: 300px;
-          border-radius: 10px;
+          width: 500px;
+          height: 400px;
+          // border-radius: 10px;
+          visibility: hidden;
         }
       }
     }
     .right {
-      border-top: 25px solid red;
+      border-top: 25px solid rgb(17, 53, 54);
       // background-color: rgb(255, 92, 92);
       box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 10%);
       border-radius: 10px;
       width: 400px;
       padding: 30px 40px;
+      margin-bottom: auto;
       .info {
         background-color: white;
         // display: flex;
@@ -58,32 +69,37 @@
           font-weight: bold;
         }
         .description {
-          text-align: right;
+          text-align: left;
+          margin: 10px 0;
         }
         .detailbill {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-top: 10px;
           .editquantity {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 20px;
             button {
-              background-color: transparent;
-              border: none;
-              cursor: pointer;
-              img {
-                height: 30px;
-                width: 30px;
-              }
+              // background-color: transparent;
+              // border: none;
+              // cursor: pointer;
+              // img {
+              //   height: 30px;
+              //   width: 30px;
+              // }
+              border-radius: 100%;
+              border: 1px solid rgba(0, 0, 0, 0.54);
             }
             h3 {
               font-size: 20px;
             }
           }
           .price {
-            font-size: 20px;
+            // font-size: 20px;
+            text-transform: none;
           }
           // display: flex;
           // justify-content: flex-end;
