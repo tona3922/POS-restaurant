@@ -16,6 +16,10 @@ import { SASHIMI } from "components/MenuDetail/tabs/storage/sashimi";
 import { Standard } from "./components/MenuDetail/tabs/standard/standard";
 import { Delivery } from "components/Delivery/Delivery";
 
+import Account from "containers/Account";
+import Profile from "components/Account/Profile";
+import PreviousOrders from "components/Account/PreviousOrders";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,10 +42,6 @@ const router = createBrowserRouter([
         path: "menu",
         element: <Menu />,
       },
-      // {
-      //   path: "menu/*",
-      //   element: <Menu />,
-      // },
       {
         path: "detail/:id",
         element: <MenuDetail />,
@@ -69,6 +69,20 @@ const router = createBrowserRouter([
       {
         path: "detail/:id/sashimi",
         element: <Standard props={SASHIMI} title={"Sashimi"} />,
+      },
+      {
+        path: "my-account",
+        element: <Account />,
+        children: [
+          {
+            path: "profile",
+            element: <Profile />,
+          },
+          {
+            path: "previous-orders",
+            element: <PreviousOrders />,
+          },
+        ],
       },
     ],
   },

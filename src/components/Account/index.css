@@ -1,0 +1,41 @@
+.sidebar {
+  flex: 0 0 30%;
+  background: #202124;
+  color: #fff;
+  padding: 3.2rem 3rem;
+  border-radius: 10px;
+}
+.account-right {
+  flex: 0 0 65%;
+}
+
+.account-list-actions {
+  margin-top: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+  margin-bottom: 0.7142857143rem;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  align-items: center;
+}
+
+.small-title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-family: Oswald, sans-serif;
+}
+
+.previous-order {
+  margin-top: 20px;
+}
+
+.account-content {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+  row-gap: 20px;
+}
