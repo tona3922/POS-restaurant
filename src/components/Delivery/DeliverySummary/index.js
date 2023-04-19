@@ -5,7 +5,7 @@ import { SubmitButton } from "components/Login";
 import { toPrice } from "containers/Cart";
 import { Link } from "react-router-dom";
 
-function Summary({ price, num }) {
+function DeliverySummary({ price, num }) {
   const disCount = 20;
   const payment = price - disCount;
   return (
@@ -69,4 +69,4 @@ function Divider() {
   return <div className="divider"></div>;
 }
 
-export default Summary;
+export default DeliverySummary;

@@ -1,4 +1,5 @@
 import React from "react";
+import { SubmitButton } from "components/Login";
 import "./foodCard.scss";
 
 const FoodCard = (props) => {
@@ -17,9 +18,7 @@ const FoodCard = (props) => {
         </div>
         <div className="details">{props.details}</div>
       </div>
-      <a href="#" className="addtoCart">
-        Thêm
-      </a>
+      <SubmitButton className="addtoCart">Thêm</SubmitButton>
     </div>
   );
 };

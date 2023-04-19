@@ -1,6 +1,8 @@
 .deliverypage {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  max-width: 1300px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px 15px 20px 15px;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -52,6 +54,7 @@
   .payment {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 5px;
     padding-bottom: 20px;
     .option {
@@ -92,5 +95,12 @@
     border-radius: 20px;
     width: 300px;
     height: 50px;
+  }
+  .delivery-content{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px ;
+    row-gap: 20px;
   }
 }
