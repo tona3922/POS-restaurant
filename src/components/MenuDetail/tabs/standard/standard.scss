@@ -1,0 +1,149 @@
+.additional {
+  .morefood {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .partial {
+      padding-top: 50px;
+      .choose {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img {
+          width: 40px;
+        }
+        padding-left: 30px;
+        padding-bottom: 20px;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 40px;
+        .card {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 300px;
+          padding: 20px 5px;
+          border-radius: 5%;
+          box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
+            0 6px 20px 0 rgb(0 0 0 / 10%);
+          img {
+            width: 200px;
+          }
+          button {
+            border-radius: 10px;
+            border-color: red;
+            width: 180px;
+            cursor: pointer;
+            color: white;
+            font-size: 20px;
+            background-color: rgb(255, 0, 0);
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1400px) and (min-width: 992px) {
+    .morefood {
+      .partial {
+        padding-top: 50px;
+        .choose {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          img {
+            width: 40px;
+          }
+          padding-left: 30px;
+          padding-bottom: 20px;
+        }
+        .container {
+          grid-template-columns: 1fr 1fr 1fr;
+          gap: 20px;
+          .card {
+            // width: calc(100%);
+            img {
+              width: 250px;
+            }
+            h3 {
+              font-size: 25px;
+            }
+            button {
+              width: 220px;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 991px) and (min-width: 768px) {
+    .morefood {
+      .partial {
+        padding-top: 50px;
+        .choose {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          img {
+            width: 40px;
+          }
+          padding-left: 30px;
+          padding-bottom: 20px;
+        }
+        .container {
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+          .card {
+            // width: calc(100%);
+            img {
+              width: 250px;
+            }
+            h3 {
+              font-size: 25px;
+            }
+            button {
+              width: 220px;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .morefood {
+      .partial {
+        padding-top: 50px;
+        .choose {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          img {
+            width: 40px;
+          }
+          padding-left: 30px;
+          padding-bottom: 20px;
+        }
+        .container {
+          grid-template-columns: 1fr;
+          gap: 20px;
+          .card {
+            // width: calc(100%);
+            img {
+              width: 250px;
+            }
+            h3 {
+              font-size: 25px;
+            }
+            button {
+              width: 220px;
+              font-size: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,231 @@
+.mybody {
+  // @media screen and (max-width: 1400px) {
+  //   // max-width: 1400px;
+  //   width: 80%;
+  //   margin: 0 auto;
+  // }
+  // margin: auto;
+  // padding-top: 30px;
+  // width: 80%;
+  .pagetitle {
+    font-size: 30px;
+    color: white;
+    background-color: black;
+    @media (max-width: 1400px) {
+      font-size: 35px;
+    }
+  }
+  .back {
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    cursor: pointer;
+    padding-left: 50px;
+    padding-top: 30px;
+    @media (max-width: 1400px) {
+      font-size: 30px;
+    }
+  }
+  .detail_page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    .left {
+      display: flex;
+      .image {
+        img {
+          width: 300px;
+          border-radius: 10px;
+        }
+      }
+    }
+    .right {
+      border-top: 25px solid red;
+      // background-color: rgb(255, 92, 92);
+      box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 10%);
+      border-radius: 10px;
+      width: 400px;
+      padding: 30px 40px;
+      .info {
+        background-color: white;
+        // display: flex;
+        .title {
+          display: flex;
+          justify-content: flex-end;
+          font-size: 26px;
+          font-weight: bold;
+        }
+        .description {
+          text-align: right;
+        }
+        .detailbill {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .editquantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            button {
+              background-color: transparent;
+              border: none;
+              cursor: pointer;
+              img {
+                height: 30px;
+                width: 30px;
+              }
+            }
+            h3 {
+              font-size: 20px;
+            }
+          }
+          .price {
+            font-size: 20px;
+          }
+          // display: flex;
+          // justify-content: flex-end;
+        }
+      }
+    }
+    @media (max-width: 1400px) and (min-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      .left {
+        width: 620px;
+        .image {
+          img {
+            width: 130%;
+          }
+        }
+      }
+      .right {
+        width: 30%px;
+        .info {
+          .title {
+            font-size: 36px;
+          }
+          .description {
+            text-align: right;
+            p {
+              font-size: 20px;
+            }
+          }
+          .detailbill {
+            .editquantity {
+              button {
+                img {
+                  height: 40px;
+                  width: 40px;
+                }
+              }
+              h3 {
+                font-size: 30px;
+              }
+            }
+            .price {
+              font-size: 30px;
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 991px) and (min-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      .left {
+        width: 420px;
+        .image {
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .right {
+        width: 350px;
+        .info {
+          .title {
+            font-size: 36px;
+          }
+          .description {
+            text-align: right;
+            p {
+              font-size: 20px;
+            }
+          }
+          .detailbill {
+            .editquantity {
+              button {
+                img {
+                  height: 40px;
+                  width: 40px;
+                }
+              }
+              h3 {
+                font-size: 30px;
+              }
+            }
+            .price {
+              font-size: 30px;
+            }
+            // display: flex;
+            // justify-content: flex-end;
+          }
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      display: flex;
+      flex-direction: column;
+      .left {
+        width: 320px;
+        .image {
+          img {
+            width: 100%;
+          }
+        }
+      }
+      .right {
+        width: 240px;
+        .info {
+          .title {
+            font-size: 20px;
+          }
+          .description {
+            text-align: right;
+            p {
+              font-size: 15px;
+            }
+          }
+          .detailbill {
+            .editquantity {
+              button {
+                img {
+                  height: 17px;
+                  width: 17px;
+                }
+              }
+              h3 {
+                font-size: 20px;
+              }
+            }
+            .price {
+              font-size: 20px;
+            }
+            // display: flex;
+            // justify-content: flex-end;
+          }
+        }
+      }
+    }
+  }
+  .menuslide {
+    display: flex;
+    justify-content: center;
+  }
+}
+// 992 -> 1400
+// 768 -> 992
+// lower-> 768
