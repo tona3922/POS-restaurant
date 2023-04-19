@@ -1,11 +1,21 @@
-import React, { useState } from "react";
-// import Header from '../../components/Header/header'
-import "./menu.scss";
-import FoodCard from "../../components/FoodCard/foodCard";
-import MenuNavBar from "components/MenuNavBar/menuNav";
-// import './menu-nameblank.scss'
-
-const Menu = () => {
+import React, { useState, useEffect } from "react";
+import "./MenuDetail.scss";
+import { Cart } from "../cart/cart";
+import test from "../../../foodimg/mainfood.webp";
+import minus from "../image/minus-sign.png";
+import plus from "../image/plus.png";
+// import Header from "components/Header/header";
+// import Footer from "components/Footer/Footer";
+// import { Standard } from "../tabs/standard/standard";
+// import { SALAD } from "../tabs/storage/salad";
+// import { CHEFBOX } from "../tabs/storage/chefbox";
+// import { NOODLE } from "../tabs/storage/udon";
+import { Menuslidetab } from "../tabs/menuslide-tab/menuslide_tab";
+import { useDispatch, useSelector } from "react-redux";
+import { increasebyAmount, decreasebyAmount, cnt } from "../store/cart";
+import { useParams } from "react-router-dom";
+import Comment from "containers/Comment/comment";
+export const MenuDetail = () => {
   const [menuDishes, setMenu] = useState([
     {
       id: 1,
@@ -116,19 +126,83 @@ const Menu = () => {
       src: "https://static.kfcvietnam.com.vn/images/items/lg/Hash-Browns-D.jpg?v=4pGwBL",
     },
   ]);
-  return (
-    <div className="main-page">
-      {/* <Header /> */}
-      <MenuNavBar></MenuNavBar>
-      <div className="tag-combo">MÓN MỚI</div>
+  const [count, setCount] = useState(1);
+  const [price, setPrice] = useState(20);
+  const id = useParams().id;
 
-      <div className="menu">
-        {menuDishes.map((dish) => (
-          <FoodCard {...dish} />
-        ))}
+  const val = useSelector(cnt);
+  // console.log(useSelector(myname));
+  const increase = (count) => {
+    setCount(count);
+    setPrice(count * 20);
+  };
+  const decrease = (count) => {
+    if (count > 0) {
+      setCount(count);
+      setPrice(count * 20);
+    } else {
+      setCount(0);
+      setPrice(0);
+    }
+  };
+  const dispatch = useDispatch();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
+    <div>
+      <div className="mybody">
+        {val > 0 ? <Cart /> : <></>}
+        <div className="detail_page">
+          <div className="left">
+            <div className="image">
+              <img src={test} alt="" />
+            </div>
+          </div>
+          <div className="right">
+            <div className="info">
+              <div className="title">{menuDishes[id - 1].title}</div>
+              <hr />
+              <div className="description">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+                  quasi esse ab commodi nisi, at ipsum aliquam eveniet. Qui
+                  autem deleniti corrupti optio repudiandae aspernatur ab fugit
+                  consectetur quis possimus.
+                </p>
+              </div>
+              <hr />
+              <div className="detailbill">
+                <div className="editquantity">
+                  <button
+                    onClick={() => {
+                      decrease(count - 1);
+                      dispatch(decreasebyAmount(20));
+                    }}
+                    // onClick={handleIncrement}
+                  >
+                    <img src={minus} alt="" />
+                  </button>
+                  <h3>{count}</h3>
+                  <button
+                    // onClick={handleDecrement}
+                    onClick={() => {
+                      increase(count + 1);
+                      dispatch(increasebyAmount(20));
+                      // dispatch(pushname({ name: "chicken", price: 20 }));
+                    }}
+                  >
+                    <img src={plus} alt="" />
+                  </button>
+                </div>
+                <div className="price">Price : {price}$</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+      <Menuslidetab id={id} />
+      {/* <Comment /> */}
     </div>
   );
 };
-
-export default Menu;

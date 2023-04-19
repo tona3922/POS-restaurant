@@ -1,0 +1,38 @@
+// .slider {
+//   display: flex;
+//   flex-direction: row;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 20px;
+//   .edit {
+//     img {
+//       width: 40px;
+//       cursor: pointer;
+//     }
+//   }
+//   .menu {
+//     display: flex;
+//     flex-direction: row;
+//     gap: 20px;
+//     .menuitem {
+//       img {
+//         width: 50px;
+//       }
+//       cursor: pointer;
+//     }
+//   }
+// }
+.cover_slider {
+  padding-top: 40px;
+  .slider {
+    width: 90%;
+    .item {
+      .menuitem {
+        img {
+          width: 50px;
+        }
+        cursor: pointer;
+      }
+    }
+  }
+}
