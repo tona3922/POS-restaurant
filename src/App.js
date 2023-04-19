@@ -14,7 +14,6 @@ import { NOODLE } from "./components/MenuDetail/tabs/storage/udon";
 import { SAKE } from "./components/MenuDetail/tabs/storage/sake";
 import { SASHIMI } from "components/MenuDetail/tabs/storage/sashimi";
 import { Standard } from "./components/MenuDetail/tabs/standard/standard";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Delivery } from "components/Delivery/Delivery";
 
 const router = createBrowserRouter([

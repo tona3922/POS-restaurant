@@ -577,5 +577,3 @@ function CommentList() {
 }
 
 export default Comment;
-
-export default Comment;
