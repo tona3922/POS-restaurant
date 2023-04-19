@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, IconButton } from "@mui/material";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
 import { Link } from "react-router-dom";
@@ -16,7 +17,7 @@ function FoodShow({ src, detail, name, price, quantity, onEditFood }) {
 
   const onDelete = () => {
     setHide(true);
-    onEditFood(price, false);
+    onEditFood(itemPrice, false, true);
   };
 
   const onAdd = () => {
@@ -44,7 +45,13 @@ function FoodShow({ src, detail, name, price, quantity, onEditFood }) {
             <div className="food-detail">
               <Button
                 variant="standard"
-                endIcon={<KeyboardArrowDownIcon />}
+                endIcon={
+                  showDetail ? (
+                    <KeyboardArrowUpIcon />
+                  ) : (
+                    <KeyboardArrowDownIcon />
+                  )
+                }
                 onClick={() => setShowDetail(!showDetail)}
                 sx={{ textTransform: "none" }}
               >
