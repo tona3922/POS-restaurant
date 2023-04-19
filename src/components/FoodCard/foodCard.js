@@ -1,14 +1,18 @@
 import React from "react";
 import { SubmitButton } from "components/Login";
 import "./foodCard.scss";
+import { Link } from "react-router-dom";
 
 const FoodCard = (props) => {
   console.log("foodCard", props);
   return (
     <div className="foodCard">
-      <div className="img-container">
-        <img src={props.src} />
-      </div>
+      <Link to={"/detail/1"}>
+        <div className="img-container">
+          <img src={props.src} />
+        </div>
+      </Link>
+
       <div className="info">
         <div className="pricetag">
           <div className="title">{props.title}</div>
@@ -18,7 +22,7 @@ const FoodCard = (props) => {
         </div>
         <div className="details">{props.details}</div>
       </div>
-      <SubmitButton className="addtoCart">Thêm</SubmitButton>
+      <SubmitButton className="addtoCart">Thêm vào giỏ</SubmitButton>
     </div>
   );
 };

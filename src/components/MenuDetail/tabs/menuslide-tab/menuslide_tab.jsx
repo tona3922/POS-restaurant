@@ -193,7 +193,7 @@ export const Menuslidetab = (id) => {
         <SwiperSlide className="item">
           <div className="menuitem">
             <Link
-              to="/sashimi"
+              to={"/detail/" + id.id + "/sashimi"}
               style={{ textDecoration: "none", color: "black" }}
             >
               <img src={sashimi} alt="" />

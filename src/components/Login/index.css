@@ -9,11 +9,16 @@
 
 .left-block {
   width: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  /* min-height: 600px; */
 }
 
 .left-block img {
   width: 100%;
   /* object-fit: cover; */
+  visibility: hidden;
   height: 100%;
 }
 

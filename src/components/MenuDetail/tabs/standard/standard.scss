@@ -4,7 +4,7 @@
     flex-direction: column;
     align-items: center;
     .partial {
-      padding-top: 50px;
+      padding-top: 30px;
       .choose {
         display: flex;
         align-items: center;
@@ -23,23 +23,34 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          width: 300px;
-          padding: 20px 5px;
-          border-radius: 5%;
-          box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%),
-            0 6px 20px 0 rgb(0 0 0 / 10%);
-          img {
-            width: 200px;
+          width: 280px;
+          height: 350px;
+          padding: 10px;
+          box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.2);
+          .pricetag{
+            width: 90%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin: 10px 0;
+            // font-weight: bold;
           }
-          button {
-            border-radius: 10px;
-            border-color: red;
-            width: 180px;
-            cursor: pointer;
-            color: white;
-            font-size: 20px;
-            background-color: rgb(255, 0, 0);
+          .product-image{
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 200px;
+            width: 100%;
           }
+          // button {
+          //   border-radius: 10px;
+          //   border-color: red;
+          //   width: 180px;
+          //   cursor: pointer;
+          //   color: white;
+          //   font-size: 20px;
+          //   background-color: rgb(255, 0, 0);
+          // }
         }
       }
     }

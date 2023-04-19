@@ -10,6 +10,7 @@ import { BsCheckCircleFill } from "react-icons/bs";
 import { IoMdAlert } from "react-icons/io";
 
 import { Rating } from "@mui/material";
+import { SubmitButton } from "components/Login";
 
 const comments = [
   {
@@ -182,26 +183,26 @@ function CommentGeneral({ _statusForm, _handleShowForm, _handleHideForm }) {
 
         {_statusForm === "0" && (
           <div class="general-send general-send-mobile">
-            <div
-              class="general-send-btn general-send-btn-mobile"
+            <SubmitButton
+              className="general-send-btn general-send-btn-mobile"
               id="comment-btn-open"
               onClick={handleBtn} // showForm là hàm xử lý bật / tắt
             >
               {" "}
               Đánh giá ngay!{" "}
-            </div>
+            </SubmitButton>
           </div>
         )}
         {_statusForm === "1" && (
           <div class="general-send general-send-mobile">
-            <div
-              class="general-send-btn general-send-btn-mobile"
+            <SubmitButton
+              className="general-send-btn general-send-btn-mobile"
               id="comment-btn-open"
               onClick={handleBtn} // showForm là hàm xử lý bật / tắt
             >
               {" "}
               Đóng{" "}
-            </div>
+            </SubmitButton>
           </div>
         )}
         {_statusForm === "2" && (
@@ -495,8 +496,8 @@ function CommentForm({
         )}
 
         <div class="comment-form-btns">
-          <div
-            class="comment-form-btn"
+          <SubmitButton
+            className="comment-form-btn"
             id="comment-btn-submit"
             onClick={(event) => {
               handleUnFill();
@@ -517,14 +518,14 @@ function CommentForm({
             }}
           >
             Gửi đánh giá
-          </div>
-          <div
-            class="comment-form-btn"
+          </SubmitButton>
+          <SubmitButton
+            className="comment-form-btn"
             id="comment-btn-cancel"
             onClick={handleCloseBtn}
           >
             Đóng
-          </div>
+          </SubmitButton>
         </div>
       </div>
     </div>
