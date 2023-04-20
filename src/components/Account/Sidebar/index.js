@@ -18,7 +18,9 @@ export const AccountButton = styled(Button)({
 
 function Sidebar() {
   const navigate = useNavigate();
-  const [chosen, setChosen] = useState("Chi tiết tài khoản");
+  const [chosen, setChosen] = useState(
+    window.location.pathname.split("/").at(-1)
+  );
   return (
     <div className="sidebar">
       <div className="account-name">
@@ -46,11 +48,10 @@ function Sidebar() {
       <div className="account-list-actions">
         <AccountButton
           sx={{
-            color:
-              chosen == "Chi tiết tài khoản" ? "white" : "hsla(0,0%,100%,.5)",
+            color: chosen == "profile" ? "white" : "hsla(0,0%,100%,.5)",
           }}
           onClick={() => {
-            setChosen("Chi tiết tài khoản");
+            setChosen("profile");
             navigate("profile");
           }}
         >
@@ -59,10 +60,10 @@ function Sidebar() {
 
         <AccountButton
           sx={{
-            color: chosen == "Đơn hàng đã đặt" ? "white" : "hsla(0,0%,100%,.5)",
+            color: chosen == "previous-orders" ? "white" : "hsla(0,0%,100%,.5)",
           }}
           onClick={() => {
-            setChosen("Đơn hàng đã đặt");
+            setChosen("previous-orders");
             navigate("previous-orders");
           }}
         >

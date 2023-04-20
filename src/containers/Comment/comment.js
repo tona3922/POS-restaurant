@@ -376,7 +376,7 @@ function CommentForm({
   return (
     <div class="comment-form">
       <div class="comment-form-container">
-        <h2 class="comment-form-header comment-form-header-mobile">
+        <h2 class="comment-form-header comment-form-header-mobile small-title">
           {" "}
           Đánh giá của bạn{" "}
         </h2>
