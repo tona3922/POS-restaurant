@@ -4,6 +4,7 @@ import "./index.css";
 import CartList from "components/Cart/CartList";
 import Summary from "components/Cart/Summary";
 import { cartData } from "./cart_data.js";
+import EmptyCart from "components/Cart/EmptyCart";
 
 export const toPrice = (price) => {
   return `${price}.000₫`;
@@ -31,11 +32,19 @@ export const CartPage = () => {
 
   return (
     <div className="page-container cart-page">
-      <CartList
-        data={cartData}
-        onEditFood={(money, add, deleted) => onEditFood(money, add, deleted)}
-      ></CartList>
-      <Summary price={totalPrice} num={numOfDish}></Summary>
+      {numOfDish > 0 ? (
+        <>
+          <CartList
+            data={cartData}
+            onEditFood={(money, add, deleted) =>
+              onEditFood(money, add, deleted)
+            }
+          ></CartList>
+          <Summary price={totalPrice} num={numOfDish}></Summary>
+        </>
+      ) : (
+        <EmptyCart></EmptyCart>
+      )}
     </div>
   );
 };
