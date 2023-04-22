@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { increasebyAmount, cnt, myname, pushname } from "../../store/cart";
+import { increasebyAmount, pushname } from "../../store/cart";
 import Comment from "containers/Comment/comment";
 import { MenuDetail } from "components/MenuDetail/MenuDetail/MenuDetail";
 import { SubmitButton } from "components/Login";
@@ -121,10 +121,10 @@ export const Standard = (props) => {
   const dispatch = useDispatch();
   // const count = useSelector(cnt);
   // const my_name = useSelector(myname);
-  function handleclick(price, name) {
+  function handleclick(price, name, imag) {
     // console.log(count);
     dispatch(increasebyAmount(price));
-    dispatch(pushname({ name, price }));
+    dispatch(pushname({ name, price, imag }));
   }
   return (
     <>
@@ -156,7 +156,9 @@ export const Standard = (props) => {
                         marginTop: "auto",
                         marginBottom: "10px",
                       }}
-                      onClick={() => handleclick(product.price, product.title)}
+                      onClick={() =>
+                        handleclick(product.price, product.title, product.img)
+                      }
                     >
                       Thêm vào giỏ
                     </SubmitButton>
@@ -167,7 +169,7 @@ export const Standard = (props) => {
           </div>
         </div>
       </div>
-      <Comment />
+      {/* <Comment /> */}
     </>
   );
 };

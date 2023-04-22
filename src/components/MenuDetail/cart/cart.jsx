@@ -21,7 +21,8 @@ export const Cart = () => {
       dispatch(quantity_Arr_decrement({ name, price }));
     }
   }
-
+  // let my_cart = [namelist];
+  // console.log(namelist);
   return (
     <div>
       <div className="cart">
@@ -43,6 +44,7 @@ export const Cart = () => {
                       <button onClick={() => lower(item[0], item[1], item[2])}>
                         <img src={minus} alt="" />
                       </button>
+                      <div>Price: {item[2] * item[1]}</div>
                     </div>
                   </div>
                 )}

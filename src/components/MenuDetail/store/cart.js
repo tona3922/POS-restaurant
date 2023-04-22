@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = { value: 20, name: [] };
+const initialState = { value: 0, name: [] };
 const count = createSlice({
   name: "entity",
   initialState,
@@ -25,7 +25,12 @@ const count = createSlice({
           return;
         }
       }
-      state.name.push([action.payload.name, 1, action.payload.price]);
+      state.name.push([
+        action.payload.name,
+        1,
+        action.payload.price,
+        action.payload.imag,
+      ]);
     },
     quantity_Arr_increment(state, action) {
       let arr = state.name;
@@ -47,6 +52,16 @@ const count = createSlice({
         }
       }
     },
+    delete_item(state, action) {
+      let arr = state.name;
+      for (let item = 0; item < arr.length; item++) {
+        if (arr[item][0] === action.payload.name) {
+          state.value -= action.payload.price * arr[item][1];
+          arr[item][1] = 0;
+          return;
+        }
+      }
+    },
   },
 });
 export const {
@@ -57,8 +72,10 @@ export const {
   pushname,
   quantity_Arr_increment,
   quantity_Arr_decrement,
+  delete_item,
 } = count.actions;
 export const cnt = (state) => state.value.value;
 export const myname = (state) => state.value.name;
+export const myimg = (state) => state.value.img;
 // export const cnt = (state) => state.entity.entity;
 export default count.reducer;

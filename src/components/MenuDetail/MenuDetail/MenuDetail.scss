@@ -74,29 +74,28 @@
         }
         .detailbill {
           display: flex;
-          justify-content: space-between;
-          align-items: center;
+          justify-content: center;
           margin-top: 10px;
-          .editquantity {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            button {
-              // background-color: transparent;
-              // border: none;
-              // cursor: pointer;
-              // img {
-              //   height: 30px;
-              //   width: 30px;
-              // }
-              border-radius: 100%;
-              border: 1px solid rgba(0, 0, 0, 0.54);
-            }
-            h3 {
-              font-size: 20px;
-            }
-          }
+          // .editquantity {
+          //   display: flex;
+          //   justify-content: center;
+          //   align-items: center;
+          //   gap: 20px;
+          //   button {
+          //     // background-color: transparent;
+          //     // border: none;
+          //     // cursor: pointer;
+          //     // img {
+          //     //   height: 30px;
+          //     //   width: 30px;
+          //     // }
+          //     border-radius: 100%;
+          //     border: 1px solid rgba(0, 0, 0, 0.54);
+          //   }
+          //   h3 {
+          //     font-size: 20px;
+          //   }
+          // }
           .price {
             // font-size: 20px;
             text-transform: none;

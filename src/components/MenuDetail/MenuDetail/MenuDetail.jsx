@@ -12,14 +12,20 @@ import plus from "../image/plus.png";
 // import { NOODLE } from "../tabs/storage/udon";
 import { Menuslidetab } from "../tabs/menuslide-tab/menuslide_tab";
 import { useDispatch, useSelector } from "react-redux";
-import { increasebyAmount, decreasebyAmount, cnt } from "../store/cart";
+import {
+  increasebyAmount,
+  decreasebyAmount,
+  quantity_Arr_decrement,
+  quantity_Arr_increment,
+  pushname,
+} from "../store/cart";
 import { useParams } from "react-router-dom";
 import Comment from "containers/Comment/comment";
 
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+// import AddIcon from "@mui/icons-material/Add";
+// import RemoveIcon from "@mui/icons-material/Remove";
 import { SubmitButton } from "components/Login";
-import { IconButton } from "@mui/material";
+// import { IconButton } from "@mui/material";
 
 export const MenuDetail = () => {
   const [menuDishes, setMenu] = useState([
@@ -132,33 +138,45 @@ export const MenuDetail = () => {
       src: "https://static.kfcvietnam.com.vn/images/items/lg/Hash-Browns-D.jpg?v=4pGwBL",
     },
   ]);
-  const [count, setCount] = useState(1);
+  // const [count, setCount] = useState(1);
   const [price, setPrice] = useState(20);
   const id = useParams().id;
-
-  const val = useSelector(cnt);
-  // console.log(useSelector(myname));
-  const increase = (count) => {
-    setCount(count);
-    setPrice(count * 20);
-  };
-  const decrease = (count) => {
-    if (count > 0) {
-      setCount(count);
-      setPrice(count * 20);
-    } else {
-      setCount(0);
-      setPrice(0);
-    }
-  };
+  // const my_name = useSelector(myname);
+  // const val = useSelector(cnt);
+  // const increase = (count) => {
+  //   setCount(count);
+  //   setPrice(count * 20);
+  // };
+  // const decrease = (count) => {
+  //   if (count > 0) {
+  //     setCount(count);
+  //     setPrice(count * 20);
+  //   } else {
+  //     setCount(0);
+  //     setPrice(0);
+  //   }
+  // };
   const dispatch = useDispatch();
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  function handleclick(price, name, imag) {
+    // console.log(count);
+    dispatch(increasebyAmount(price));
+    dispatch(pushname({ name, price, imag }));
+  }
+  function upper(name, price) {
+    dispatch(quantity_Arr_increment({ name, price }));
+  }
+  function lower(name, cnt, price) {
+    if (cnt > 0) {
+      dispatch(quantity_Arr_decrement({ name, price }));
+    }
+  }
   return (
     <div>
       <div className="mybody">
-        {val > 0 ? <Cart /> : <></>}
+        {/* {val > 0 ? <Cart /> : <></>} */}
         <div className="detail_page">
           <div className="left" style={{ backgroundImage: `url(${test})` }}>
             <div className="image">
@@ -179,29 +197,40 @@ export const MenuDetail = () => {
               </div>
               <hr />
               <div className="detailbill">
-                <div className="editquantity">
+                {/* <div className="editquantity">
                   <IconButton
+                    // onClick={() => {
+                    //   decrease(count - 1);
+                    //   dispatch(decreasebyAmount(20));
+                    // }}
                     onClick={() => {
+                      lower(menuDishes[id - 1].title, count, price);
                       decrease(count - 1);
-                      dispatch(decreasebyAmount(20));
                     }}
-                    // onClick={handleIncrement}
                   >
                     <RemoveIcon></RemoveIcon>
                   </IconButton>
                   <h3>{count}</h3>
                   <IconButton
                     // onClick={handleDecrement}
+                    // onClick={() => {
+                    //   increase(count + 1);
+                    //   dispatch(increasebyAmount(20));
+                    // }}
                     onClick={() => {
+                      upper(menuDishes[id - 1].title, price);
                       increase(count + 1);
-                      dispatch(increasebyAmount(20));
-                      // dispatch(pushname({ name: "chicken", price: 20 }));
                     }}
                   >
                     <AddIcon></AddIcon>
                   </IconButton>
-                </div>
-                <SubmitButton className="price">
+                </div> */}
+                <SubmitButton
+                  className="price"
+                  onClick={() => {
+                    handleclick(price, menuDishes[id - 1].title, test);
+                  }}
+                >
                   Thêm vào giỏ : {price}$
                 </SubmitButton>
               </div>
@@ -209,8 +238,8 @@ export const MenuDetail = () => {
           </div>
         </div>
       </div>
+      <Comment />
       <Menuslidetab id={id} />
-      {/* <Comment /> */}
     </div>
   );
 };
