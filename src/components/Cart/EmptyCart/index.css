@@ -1,0 +1,23 @@
+.empty-cart img {
+  width: calc(100vh - 235px);
+  height: calc(100vh - 235px);
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  background-color: aliceblue;
+  padding: 30px;
+}
+
+.empty-cart-message {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2.8rem;
+}
