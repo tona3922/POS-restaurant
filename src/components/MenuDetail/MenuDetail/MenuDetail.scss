@@ -35,13 +35,16 @@
     margin: 20px 0;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     gap: 30px;
     .left {
       display: flex;
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
+      height: 100%;
+      flex-grow: 3;
+      width: auto;
       .image {
         img {
           width: 500px;
@@ -57,6 +60,7 @@
       box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 10%);
       border-radius: 10px;
       width: 400px;
+      height:100%;
       padding: 30px 40px;
       margin-bottom: auto;
       .info {
@@ -69,8 +73,11 @@
           font-weight: bold;
         }
         .description {
+          display: flex;
           text-align: left;
           margin: 10px 0;
+          flex-grow: 3;
+          height: 200px;
         }
         .detailbill {
           display: flex;

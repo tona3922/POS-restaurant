@@ -6,6 +6,8 @@ import Summary from "components/Cart/Summary";
 import { cartData } from "./cart_data.js";
 import { useSelector } from "react-redux";
 import { cnt, myname } from "../../components/MenuDetail/store/cart";
+import EmptyCart from "components/Cart/EmptyCart";
+
 export const toPrice = (price) => {
   return `${price}.000₫`;
 };
@@ -43,11 +45,24 @@ export const CartPage = () => {
   }
   return (
     <div className="page-container cart-page">
-      <CartList
+      {/* <CartList
         data={cartData}
         onEditFood={(money, add, deleted) => onEditFood(money, add, deleted)}
-      ></CartList>
+      ></CartList> */}
       <Summary price={count} num={foodlist}></Summary>
+      {count > 0 ? (
+        <>
+          <CartList
+            data={cartData}
+            onEditFood={(money, add, deleted) =>
+              onEditFood(money, add, deleted)
+            }
+          ></CartList>
+          {/* <Summary price={totalPrice} num={numOfDish}></Summary> */}
+        </>
+      ) : (
+        <EmptyCart></EmptyCart>
+      )}
     </div>
   );
 };

@@ -1,7 +1,8 @@
 .foodCard {
     // width: 25%;
     // flex: 0 0 30%;
-    width: 25%;
+    width: 22%;
+    min-width: 400px;
     padding: 10px;
     margin: 0 0.3963vw 20px;
     display: flex;
@@ -10,6 +11,41 @@
     // border-radius: 10px;
     background-color: rgba(0,0,0,0);
     box-shadow: 0 0 8px 0 rgba(0,0,0,.2);
+    @media screen  and  (max-width: 800px) {
+        width: 22%;
+        min-width: 400px;
+        padding: 10px;
+        margin: 0 0.3963vw 20px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        // border-radius: 10px;
+        background-color: rgba(0,0,0,0);
+        box-shadow: 0 0 8px 0 rgba(0,0,0,.2);
+            justify-content: center;
+
+        .img-container {
+            width: 50%;
+            overflow-x: hidden;
+            overflow-y: hidden;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            img {
+                width: 50%;
+                // min-height: 218px;
+                display: inline-block;
+                transition: all 0.5s ease-in-out;
+                margin: 0;
+                padding: 0;
+    
+                &:hover {
+                    transform: scale(1.1);
+                    
+                }
+            }
+        }
+    }
     .img-container {
         width: 100%;
         overflow-x: hidden;

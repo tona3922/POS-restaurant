@@ -7,7 +7,7 @@ const FoodCard = (props) => {
   console.log("foodCard", props);
   return (
     <div className="foodCard">
-      <Link to={"/detail/1"}>
+      <Link to={`/detail/${props.id}`}>
         <div className="img-container">
           <img src={props.src} />
         </div>
