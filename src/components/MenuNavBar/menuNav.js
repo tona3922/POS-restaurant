@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "./menuNav.scss";
 import { Button } from "@mui/material";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Navigation, Scrollbar } from "swiper";
 
 const MenuNavBar = () => {
   const [tags, setTags] = useState([
@@ -18,11 +21,11 @@ const MenuNavBar = () => {
       nav: "sharing",
     },
     {
-      label: "GÀ RÁN - GÀ QUAY",
-      nav: "fried-rosted-chicken",
+      label: "SUSHI - CƠM CUỘN",
+      nav: "sushi",
     },
     {
-      label: "BURGER - CƠM - MÌ Ý",
+      label: "RAMEN",
       nav: "burger---rice",
     },
     {
@@ -36,11 +39,21 @@ const MenuNavBar = () => {
   ]);
   return (
     <div className="nav-container">
-      {tags.map((tag) => (
-        <Button className="navTag" variant="text">
-          {tag.label}
-        </Button>
-      ))}
+      <Swiper
+        // install Swiper modules
+        modules={[Navigation, Scrollbar]}
+        spaceBetween={0}
+        navigation
+        slidesPerView={'auto'}
+      >
+        {tags.map((tag) => (
+          <SwiperSlide className="swiper-slide">
+            <Button variant="text" className="navTag" href={`#${tag.nav}`}>
+              {tag.label}
+            </Button>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };

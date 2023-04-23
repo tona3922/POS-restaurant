@@ -20,7 +20,7 @@
         justify-content: center;
     }
     .tag-combo {
-
+        scroll-margin-top: 215px;
         margin-left: 0.5em;
         margin-bottom: 10px;
         margin-top: 1em;
@@ -38,12 +38,15 @@
             flex-direction: row;
             justify-content: center;
         }
-        @media screen  and  (max-width: 500px) {
+        @media screen  and  (max-width: 800px) {
             width: 100%;
-            flex-flow: wrap;
+            
+            flex-wrap: nowrap;
             display: flex;
-            flex-direction: column;
+            // flex-direction: column;
+            flex-direction: row;
             justify-content: center;
+            overflow: auto;
         }
     }
 }
