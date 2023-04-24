@@ -10,6 +10,9 @@ import plus from "../image/plus.png";
 // import { SALAD } from "../tabs/storage/salad";
 // import { CHEFBOX } from "../tabs/storage/chefbox";
 // import { NOODLE } from "../tabs/storage/udon";
+import pic4 from "../../../foodimg/chefbox/pic4.png";
+import pic5 from "../../../foodimg/chefbox/pic5.png";
+import pic6 from "../../../foodimg/chefbox/pic6.png";
 import { Menuslidetab } from "../tabs/menuslide-tab/menuslide_tab";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -143,7 +146,11 @@ export const MenuDetail = (props) => {
                 <SubmitButton
                   className="price"
                   onClick={() => {
-                    handleclick(price, menuDishes[id - 1].title, test);
+                    handleclick(
+                      price,
+                      menuDishes[id - 1].title,
+                      menuDishes[id - 1].src
+                    );
                   }}
                 >
                   Thêm vào giỏ : {price}$
