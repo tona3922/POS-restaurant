@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import Header from '../../components/Header/header'
 import "./menu.scss";
 import FoodCard from "../../components/FoodCard/foodCard";
@@ -20,29 +20,26 @@ const Menu = () => {
       dishes: [
         {
           id: 1,
-          src:
-            "https://media.appfront.app/businesses/5ec4e984823a060e17387d8b/menu-items/ec92dd2791801d0667b4476e13313703/600-_-contain_v4",
+          src: "https://media.appfront.app/businesses/5ec4e984823a060e17387d8b/menu-items/ec92dd2791801d0667b4476e13313703/600-_-contain_v4",
           title: "Slow Cooked Ribs Signature Box",
           details: "12 slow cooked ribs",
           price: 58000,
         },
         {
           id: 2,
-          src:
-            "https://media.appfront.app/businesses/5ec4e984823a060e17387d8b/menu-items/b1fd8ac17483a43a9699cdb6aadfa9dd/600-_-contain_v4",
+          src: "https://media.appfront.app/businesses/5ec4e984823a060e17387d8b/menu-items/b1fd8ac17483a43a9699cdb6aadfa9dd/600-_-contain_v4",
           title: "Spicy California Hand Roll",
           details: "Kani Crab, Avocado, Cucumber, Sambal Aioli",
           price: 24000,
         },
         {
           id: 3,
-          src:
-            "https://media.appfront.app/businesses/5ec4e984823a060e17387d8b/menu-items/373468503aacfdeb4574d3095d3fe577/600-_-contain_v4",
+          src: "https://media.appfront.app/businesses/5ec4e984823a060e17387d8b/menu-items/373468503aacfdeb4574d3095d3fe577/600-_-contain_v4",
           title: "Zenko Roll",
           details: "Hamachi, Yuzu Truffle Sauce",
           price: 41000,
         },
-      ]
+      ],
     },
     {
       label: "COMBO 1 NGƯỜI",
@@ -74,20 +71,24 @@ const Menu = () => {
       nav: "dessert-&-drink",
       dishes: [],
     },
-
   ]);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="main-page">
       {/* <Header /> */}
       <MenuNavBar></MenuNavBar>
 
-
-
       {menu.map((section) => (
         <>
-          <div className="tag-combo" id={`${section.nav}`}>{section.label}</div>
+          <div className="tag-combo" id={`${section.nav}`}>
+            {section.label}
+          </div>
           <div className="menu">
-            {section.dishes.map(dish => <FoodCard {...dish} />)}
+            {section.dishes.map((dish) => (
+              <FoodCard {...dish} />
+            ))}
           </div>
         </>
       ))}
